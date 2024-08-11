@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "GOT";
+  src: url(../fonts/GOT.ttf);
+}
+
+:root {
+  --white: #FFF;
+  --yellow: #DA9100;
+  --red: #D1001F;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.carrossel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.conteudo {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.info {
+  display: none;
+}
+
+.info.ativa {
+  display: block;
+}
+
+.info h1 {
+  font-size: 35px;
+  color: var(--yellow);
+  font-family: "GOT";
+  margin-bottom: 40px;
+  letter-spacing: 5px;
+}
+
+.info .descricao {
+  width: 45%;
+  font-size: 20px;
+  color: var(--white);
+  line-height: 40px;
+  height: 300px;
+  overflow: auto;
+  padding-right: 15px;
+}
+
+.botoes-carrossel {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.botoes-carrossel .botao {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  border-color: var(--white);
+}
+
+.botoes-carrossel .botao.selecionado {
+  background-color: var(--red);
+}
+
+.img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: none;
+}
+
+.img.ativa {
+  display: block;
+  animation: mudarImagem 0.7s;
+}
+
+@keyframes mudarImagem {
+  from {
+    opacity: 0.85;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+main::after {
+  content: '';
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(120deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0.05926120448179273) 50%);
+  z-index: -1;
+}
